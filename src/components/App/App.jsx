@@ -1,55 +1,27 @@
-import {
-  ContactList,
-  Filter,
-  ContactForm,
-  InfoTable,
-  PhoneBookForm,
-  Title,
-  NewContactForm,
-  Subtitle,
-  ContactListForm,
-  Loader,
-} from 'components';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
 import 'primeicons/primeicons.css';
-import { selectError, selectIsLoading, selectContacts } from 'redux/selectors';
+// import { selectError, selectIsLoading, selectContacts } from 'redux/selectors';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from 'pages/Home';
+import { NewUserPage } from 'pages/NewUser';
+import { ContactsPage } from 'pages/Contacts';
+import { LogInPage } from 'pages/LogIn';
+import { Layout } from 'Layout';
 
 const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const allContacts = useSelector(selectContacts);
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
   return (
-    <PhoneBookForm>
-      <Title>My Phonebook</Title>
-      <InfoTable>
-        <NewContactForm>
-          <Subtitle>Add new contact</Subtitle>
-          <ContactForm />
-        </NewContactForm>
-
-        <ContactListForm>
-          <Subtitle>My contacts</Subtitle>
-
-          {isLoading && <Loader />}
-          {error && <p>{error.message}</p>}
-          {allContacts.length === 0 ? (
-            !isLoading && <p>No saved contacts</p>
-          ) : (
-            <div>
-              <Filter />
-              <ContactList />
-            </div>
-          )}
-        </ContactListForm>
-      </InfoTable>
-    </PhoneBookForm>
+    <Routes>
+      <Route path="/" element={<Layout />} />
+      <Route index element={<HomePage />} />
+      <Route path="/register" element={<NewUserPage />} />
+      <Route path="/login" element={<LogInPage />} />
+      <Route path="/contacts" element={<ContactsPage />} />
+    </Routes>
   );
 };
 
