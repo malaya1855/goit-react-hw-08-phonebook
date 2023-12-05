@@ -3,7 +3,6 @@ import {
   ListItem,
   List,
   ListItemText,
-  ListItemLink,
   BtnName,
 } from 'components';
 import { useEffect } from 'react';
@@ -45,10 +44,6 @@ export const ContactList = () => {
           <ListItem key={contact.id}>
             <ListItemText>{nameFirstUpperLetter}</ListItemText>
             <ListItemText>{contact.number}</ListItemText>
-            <ListItemLink href={`mailto:${contact.email}`}>
-              {contact.email}
-            </ListItemLink>
-
             <ButtonDelete
               type="ButtonDelete"
               id={contact.id}

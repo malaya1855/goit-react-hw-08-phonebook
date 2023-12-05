@@ -16,13 +16,6 @@ export const ListItemText = styled.p`
   color: rgb(72, 76, 122);
   text-align: left;
 `;
-export const ListItemLink = styled.a`
-  width: 170px;
-  font-size: 14px;
-  color: rgb(72, 76, 122);
-  text-decoration: none;
-  text-align: left;
-`;
 
 export const ButtonDelete = styled.button`
   outline: 0;

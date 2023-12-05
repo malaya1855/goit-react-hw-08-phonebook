@@ -13,9 +13,8 @@ export const ContactForm = () => {
     const currentElement = ev.currentTarget.elements;
     const name = currentElement.name.value.trim();
     const number = currentElement.number.value;
-    const email = currentElement.email.value;
 
-    const newContact = { name, number, email };
+    const newContact = { name, number };
 
     ev.target.reset();
     const existedContact = allContacts.find(
@@ -47,16 +46,6 @@ export const ContactForm = () => {
           name="number"
           mask="+39 999-9999999"
           placeholder="Phone number"
-          required
-        />
-      </label>
-      <label htmlFor="email">
-        <Input
-          type="text"
-          name="email"
-          placeholder="Email"
-          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-          title="Email must contain @ symbol amd domain's name (.com, .net, etc.)"
           required
         />
       </label>
