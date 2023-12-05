@@ -8,5 +8,10 @@ export * from 'components/ContactList/ContactList.styled.jsx'
 export * from 'components/Filter/Filter.jsx'
 export * from 'components/Filter/Filter.styled.jsx'
 
-export * from 'components/App/App.jsx'
-export * from 'components/App/App.styled.jsx'
+export * from 'components/App.jsx'
+export * from 'components/AppBar.jsx'
+export * from 'components/Layout.jsx'
+
+
+
+export * from 'pages/Contacts/Contacts.styled.js'
