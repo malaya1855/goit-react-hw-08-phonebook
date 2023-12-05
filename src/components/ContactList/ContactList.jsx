@@ -8,16 +8,15 @@ import {
 import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/operations';
-import { selectFilter, selectContacts } from 'redux/selectors';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { selectFilter, selectContacts } from 'redux/contacts/selectors';
 
 export const ContactList = () => {
   const allContacts = useSelector(selectContacts);
   const filterName = useSelector(selectFilter);
 
   const dispatch = useDispatch();
-
-  const normalizedFilter = filterName.toLowerCase();
+  const normalizedFilter = filterName ? filterName.toLowerCase() : '';
   const filteredContacts = allContacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)
   );

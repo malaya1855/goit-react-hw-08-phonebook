@@ -1,8 +1,8 @@
 import { Form, Input, ButtonForm, BtnNewName } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import { InputMask } from 'primereact/inputmask';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
   const allContacts = useSelector(selectContacts);
