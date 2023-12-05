@@ -10,7 +10,7 @@ export const UserMenu = () => {
     <div>
       <p>Welcome to your contacts {user.name}</p>
       <button type="button" onClick={() => dispatch(logOut())}>
-        Log out
+        Sign Out
       </button>
     </div>
   );
