@@ -36,7 +36,7 @@ export const ContactList = () => {
     Confirm.show(
       'Delete contact',
       'Are you sure you want to delete the contact?',
-      'Ok',
+      'Yes',
       'Cancel',
       confirmAction,
       () => {
