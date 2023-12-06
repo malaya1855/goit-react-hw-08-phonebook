@@ -1,8 +1,10 @@
-import { Form, Input, ButtonForm, BtnNewName } from 'components';
+import { Form, Input } from 'components';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { InputMask } from 'primereact/inputmask';
 import { selectContacts } from 'redux/contacts/selectors';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import { Button, SvgIcon } from '@mui/material';
 
 export const ContactForm = () => {
   const allContacts = useSelector(selectContacts);
@@ -49,9 +51,25 @@ export const ContactForm = () => {
           required
         />
       </label>
-      <ButtonForm type="submit">
-        <BtnNewName className="pi pi-user-plus"></BtnNewName>
-      </ButtonForm>
+
+      <Button
+        type="sybmit"
+        sx={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+
+          width: '45px',
+          color: 'rgb(72, 76, 122)',
+          boxShadow:
+            '0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%)',
+          transition: 'all 0.2s ease-out',
+        }}
+      >
+        <SvgIcon
+          component={PersonAddIcon}
+          sx={{ fontSize: '20px', color: 'rgb(72, 76, 122)' }}
+        ></SvgIcon>
+      </Button>
     </Form>
   );
 };

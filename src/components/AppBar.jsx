@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { UserMenu } from '../UserMenu/UserMenu';
-import { AuthMenu } from '../AuthMenu/AuthMenu';
+import { UserMenu } from './UserMenu/UserMenu';
+import { AuthMenu } from './AuthMenu/AuthMenu';
 import { useAuth } from 'useAuth';
 
 import * as React from 'react';
@@ -13,7 +13,10 @@ export const AppBarMenu = () => {
 
   return (
     <Box sx={{ width: '1000px', marginLeft: 'auto', marginRight: 'auto' }}>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: '#f5f5fa', color: 'rgb(72, 76, 122)' }}
+      >
         <Toolbar>
           <Box
             sx={{
