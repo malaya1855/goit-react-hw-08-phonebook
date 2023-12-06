@@ -1,27 +1,24 @@
-import { Box, Button } from '@mui/material';
-// import { NavLink } from 'react-router-dom';
+import { Box, Link } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 export const AuthMenu = () => {
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-      <Button
-        to="/login"
-        // onClick={handleCloseNavMenu}
-        sx={{ my: 2, color: 'white', display: 'block' }}
+    <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+      <NavLink
+        as={Link}
+        to="./login"
+        style={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
       >
         Sign In
-      </Button>
-      <Button
-        to="/register"
-        // onClick={handleCloseNavMenu}
-        sx={{ my: 2, color: 'white', display: 'block' }}
+      </NavLink>
+      <NavLink
+        as={Link}
+        to="./register"
+        style={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
+        // sx={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
       >
         Sign Up
-      </Button>
+      </NavLink>
     </Box>
-    // <div>
-    //   <NavLink to="/login">Sign In</NavLink>
-    //   <NavLink to="/register">Sign Up</NavLink>
-    // </div>
   );
 };

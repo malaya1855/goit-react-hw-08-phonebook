@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { UserMenu } from './UserMenu/UserMenu';
+// import { NavLink } from 'react-router-dom';
+import { UserMenu } from './UserMenu';
 import { AuthMenu } from './AuthMenu/AuthMenu';
 import { useAuth } from 'useAuth';
 
@@ -7,6 +7,8 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import { Link } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 export const AppBarMenu = () => {
   const { isLoggedIn } = useAuth();
@@ -25,9 +27,23 @@ export const AppBarMenu = () => {
               width: '100%',
             }}
           >
-            <Box>
-              <NavLink to="/">Home</NavLink>
-              {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+            <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+              <NavLink
+                as={Link}
+                to="./"
+                style={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
+              >
+                Home
+              </NavLink>
+              {isLoggedIn && (
+                <NavLink
+                  as={Link}
+                  to="./contacts"
+                  style={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
+                >
+                  Contacts
+                </NavLink>
+              )}
             </Box>
             {isLoggedIn ? <UserMenu /> : <AuthMenu />}
           </Box>

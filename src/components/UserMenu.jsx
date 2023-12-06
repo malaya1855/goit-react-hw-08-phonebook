@@ -1,16 +1,17 @@
-import { Button, SvgIcon } from '@mui/material';
+import { Box, Button, SvgIcon, Typography } from '@mui/material';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'useAuth';
 
 export const UserMenu = () => {
-  const { user } = useAuth();
+  const { user } = useAuth() || {};
   const dispatch = useDispatch();
+  console.log(user.name);
 
   return (
-    <div>
-      <p>Welcome to your contacts {user.name}</p>
+    <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+      <Typography>Welcome to your contacts, {user.name}</Typography>
       <Button
         type="button"
         onClick={() => dispatch(logOut())}
@@ -28,8 +29,8 @@ export const UserMenu = () => {
         <SvgIcon
           component={ExitToAppIcon}
           sx={{ fontSize: '20px', color: 'rgb(72, 76, 122)' }}
-        ></SvgIcon>{' '}
+        ></SvgIcon>
       </Button>
-    </div>
+    </Box>
   );
 };

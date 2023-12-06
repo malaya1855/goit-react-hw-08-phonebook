@@ -3,13 +3,13 @@ import { Layout } from './Layout';
 import { Home } from 'pages/Home';
 import { NewUser } from 'pages/NewUser';
 import { LogIn } from 'pages/LogIn';
-import { Contacts } from 'pages/Contacts/Contacts';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useAuth } from 'useAuth';
+import { Contacts } from 'components';
 
 // import { lazy } from 'reac.t';
 // const Home = lazy(() => import('pages/Home'));
