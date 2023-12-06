@@ -15,7 +15,6 @@ export const AuthMenu = () => {
         as={Link}
         to="./register"
         style={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
-        // sx={{ color: 'rgb(72, 76, 122)', textDecoration: 'none' }}
       >
         Sign Up
       </NavLink>

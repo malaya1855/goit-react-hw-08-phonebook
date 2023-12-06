@@ -9,8 +9,9 @@ export const Form = styled.form`
 
 export const Input = styled.input`
   box-sizing: border-box;
-  width: 150px;
+  width: 100%;
   border: 0;
+  border-radius: 4px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -29,4 +30,9 @@ export const Input = styled.input`
   ::placeholder {
     color: rgb(72, 76, 122);
   }
+`;
+export const Subtitle = styled.h2`
+  text-align: center;
+  font-size: 22px;
+  color: rgb(72, 76, 122);
 `;

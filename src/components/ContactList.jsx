@@ -15,6 +15,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import { selectFilter, selectContacts } from 'redux/contacts/selectors';
 
+const style = {
+  fontWeight: '700',
+};
+
 export const ContactList = () => {
   const allContacts = useSelector(selectContacts);
   const filterName = useSelector(selectFilter);
@@ -48,12 +52,16 @@ export const ContactList = () => {
     <p>No matched contacts in your phone book</p>
   ) : (
     <TableContainer component={Paper} sx={{ marginTop: '20px' }}>
-      <Table sx={{ width: '500' }} aria-label="simple table">
-        <TableHead>
-          <TableRow sx={{ fontWeight: '500' }}>
-            <TableCell>Contact name</TableCell>
-            <TableCell align="center">Phone Number</TableCell>
-            <TableCell align="center">Delete contact</TableCell>
+      <Table sx={{ width: '100%' }} aria-label="simple table">
+        <TableHead sx={{ fontWeight: '700' }}>
+          <TableRow>
+            <TableCell sx={style}>Contact name</TableCell>
+            <TableCell sx={style} align="center">
+              Phone Number
+            </TableCell>
+            <TableCell sx={style} align="center">
+              Delete contact
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

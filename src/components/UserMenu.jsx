@@ -2,7 +2,7 @@ import { Box, Button, SvgIcon, Typography } from '@mui/material';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
-import { useAuth } from 'useAuth';
+import { useAuth } from 'components/useAuth';
 
 export const UserMenu = () => {
   const { user } = useAuth() || {};
@@ -15,9 +15,6 @@ export const UserMenu = () => {
         type="button"
         onClick={() => dispatch(logOut())}
         sx={{
-          // marginLeft: 'auto',
-          // marginRight: 'auto',
-
           width: '45px',
           color: 'rgb(72, 76, 122)',
           boxShadow:

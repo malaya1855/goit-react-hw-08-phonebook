@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -13,12 +11,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// TODO remove, this demo shouldn't need to reset the theme.
-// const defaultTheme = createTheme();
-
-export const LogIn = () => {
+export default function LogIn() {
   const dispatch = useDispatch();
   const handleSubmit = e => {
     e.preventDefault();
@@ -33,7 +27,6 @@ export const LogIn = () => {
   };
 
   return (
-    // <ThemeProvider theme={defaultTheme}>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Box
@@ -71,10 +64,7 @@ export const LogIn = () => {
             id="password"
             autoComplete="current-password"
           />
-          {/* <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          /> */}
+
           <Button
             type="submit"
             fullWidth
@@ -92,38 +82,5 @@ export const LogIn = () => {
         </Box>
       </Box>
     </Container>
-    // </ThemeProvider>
   );
-};
-// import { useDispatch } from 'react-redux';
-// import { logIn } from 'redux/auth/operations';
-
-// export const LogIn = () => {
-//   const dispatch = useDispatch();
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     const form = e.currentTarget;
-//     dispatch(
-//       logIn({
-//         email: form.elements.email.value,
-//         password: form.elements.password.value,
-//       })
-//     );
-//     form.reset();
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit} autoComplete="off">
-//       <label>
-//         Email
-//         <input type="email" name="email" />
-//       </label>
-//       <label>
-//         Password
-//         <input type="password" name="password" />
-//       </label>
-//       <button type="submit">Log In</button>
-//     </form>
-//   );
-// };
+}

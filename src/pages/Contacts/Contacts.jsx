@@ -1,12 +1,8 @@
 import {
   ContactList,
   Filter,
-  ContactForm,
-  InfoTable,
   PhoneBookForm,
   Title,
-  NewContactForm,
-  Subtitle,
   ContactListForm,
 } from 'components';
 import { useEffect } from 'react';
@@ -19,8 +15,16 @@ import {
   selectContacts,
 } from 'redux/contacts/selectors';
 import { LoaderProgress } from 'components/LoaderProgress';
+import { Box } from '@mui/material';
+import { ModalNewContact } from 'components/Modal';
+const style = {
+  display: 'flex',
+  justifyContent: 'space-evenly',
+  alignItems: 'center',
+  width: '100%',
+};
 
-export const Contacts = () => {
+export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -29,30 +33,30 @@ export const Contacts = () => {
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
   return (
     <PhoneBookForm>
-      <Title>My Phonebook</Title>
-      <InfoTable>
-        <NewContactForm>
-          <Subtitle>Add new contact</Subtitle>
-          <ContactForm />
-        </NewContactForm>
-
-        <ContactListForm>
-          <Subtitle>My contacts</Subtitle>
-
-          {isLoading && <LoaderProgress />}
-          {error && <p>{error.message}</p>}
-          {allContacts.length === 0 ? (
-            !isLoading && <p>No saved contacts</p>
-          ) : (
-            <div>
+      <ContactListForm>
+        <Title>My Contacts</Title>
+        {isLoading && <LoaderProgress />}
+        {error && <p>{error.message}</p>}
+        {allContacts.length === 0 ? (
+          !isLoading && (
+            <Box sx={style}>
+              <ModalNewContact />
+              <p>No saved contacts</p>
+            </Box>
+          )
+        ) : (
+          <div>
+            <Box sx={style}>
+              <ModalNewContact />
               <Filter />
-              <ContactList />
-            </div>
-          )}
-        </ContactListForm>
-      </InfoTable>
+            </Box>
+            <ContactList />
+          </div>
+        )}
+      </ContactListForm>
     </PhoneBookForm>
   );
-};
+}

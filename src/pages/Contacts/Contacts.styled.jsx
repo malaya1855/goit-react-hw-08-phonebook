@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 export const PhoneBookForm = styled.div`
-  width: 700px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -17,12 +17,8 @@ export const InfoTable = styled.div`
 
 export const Title = styled.h1`
   text-align: center;
-  margin: 0;
-  color: rgb(72, 76, 122);
-`;
-
-export const Subtitle = styled.h2`
-  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 0;
   color: rgb(72, 76, 122);
 `;
 
@@ -31,33 +27,5 @@ export const NewContactForm = styled.div`
 `;
 export const ContactListForm = styled.div`
   text-align: center;
-  width: 500px;
-`;
-
-export const Loader = styled.span`
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: block;
-  margin: 50px auto;
-  position: relative;
-  background: rgb(72, 76, 122);
-  box-shadow: -24px 0 rgb(72, 76, 122), 24px 0 rgb(72, 76, 122);
-  box-sizing: border-box;
-  animation: shadowPulse 2s linear infinite;
-
-  @keyframes shadowPulse {
-    33% {
-      background: rgb(72, 76, 122);
-      box-shadow: -24px 0 #ff3d00, 24px 0 rgb(72, 76, 122);
-    }
-    66% {
-      background: #ff3d00;
-      box-shadow: -24px 0 rgb(72, 76, 122), 24px 0 rgb(72, 76, 122);
-    }
-    100% {
-      background: rgb(72, 76, 122);
-      box-shadow: -24px 0 rgb(72, 76, 122), 24px 0 #ff3d00;
-    }
-  }
+  width: 100%;
 `;

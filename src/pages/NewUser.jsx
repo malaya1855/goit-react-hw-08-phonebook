@@ -9,15 +9,10 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
-// const defaultTheme = createTheme();
-
-export const NewUser = () => {
+export default function NewUser() {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -34,7 +29,6 @@ export const NewUser = () => {
   };
 
   return (
-    // <ThemeProvider theme={defaultTheme}>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <Box
@@ -105,42 +99,5 @@ export const NewUser = () => {
         </Box>
       </Box>
     </Container>
-    // </ThemeProvider>
   );
-};
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/operations';
-
-// export const NewUser = () => {
-//   const dispatch = useDispatch();
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     const form = e.currentTarget;
-//     dispatch(
-//       register({
-//         name: form.elements.name.value,
-//         email: form.elements.email.value,
-//         password: form.elements.password.value,
-//       })
-//     );
-//     form.reset();
-//   };
-//   return (
-//     <form onSubmit={handleSubmit} autoComplete="off">
-//       <label>
-//         Username
-//         <input type="text" name="name" />
-//       </label>
-//       <label>
-//         Email
-//         <input type="email" name="email" />
-//       </label>
-//       <label>
-//         Password
-//         <input type="password" name="password" />
-//       </label>
-//       <button type="submit">Register</button>
-//     </form>
-//   );
-// };
+}

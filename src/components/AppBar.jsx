@@ -1,7 +1,6 @@
-// import { NavLink } from 'react-router-dom';
 import { UserMenu } from './UserMenu';
-import { AuthMenu } from './AuthMenu/AuthMenu';
-import { useAuth } from 'useAuth';
+import { AuthMenu } from './AuthMenu';
+import { useAuth } from 'components/useAuth';
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -24,6 +23,7 @@ export const AppBarMenu = () => {
             sx={{
               display: 'flex',
               justifyContent: 'space-between',
+              alignItems: 'center',
               width: '100%',
             }}
           >
@@ -52,21 +52,3 @@ export const AppBarMenu = () => {
     </Box>
   );
 };
-
-// import { AppBarMenu, MenuContainer } from './AppBar.styled';
-
-// export const AppBar = () => {
-//   return (
-//     <header>
-//       <MenuContainer>
-//         <AppBarMenu>
-//           <nav>
-//             <NavLink to="/">Home</NavLink>
-//             {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-//           </nav>
-//           {isLoggedIn ? <UserMenu /> : <AuthMenu />}
-//         </AppBarMenu>
-//       </MenuContainer>
-//     </header>
-//   );
-// };
