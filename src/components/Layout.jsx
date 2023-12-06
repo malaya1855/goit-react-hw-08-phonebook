@@ -4,7 +4,13 @@ import { AppBarMenu } from './AppBar';
 
 export const Layout = () => {
   return (
-    <div>
+    <div
+      style={{
+        display: 'block',
+        width: 1000,
+        margin: '0 auto',
+      }}
+    >
       <AppBarMenu />
       <Suspense fallback={null}>
         <Outlet />
