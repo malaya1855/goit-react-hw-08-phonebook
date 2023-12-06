@@ -7,7 +7,6 @@ import { useAuth } from 'useAuth';
 export const UserMenu = () => {
   const { user } = useAuth() || {};
   const dispatch = useDispatch();
-  console.log(user.name);
 
   return (
     <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>

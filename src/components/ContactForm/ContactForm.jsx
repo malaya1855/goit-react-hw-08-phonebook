@@ -5,11 +5,12 @@ import { InputMask } from 'primereact/inputmask';
 import { selectContacts } from 'redux/contacts/selectors';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import { Button, SvgIcon } from '@mui/material';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export const ContactForm = () => {
   const allContacts = useSelector(selectContacts);
-
   const dispatch = useDispatch();
+
   const onSubmitForm = ev => {
     ev.preventDefault();
     const currentElement = ev.currentTarget.elements;
@@ -23,9 +24,10 @@ export const ContactForm = () => {
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     );
     if (existedContact) {
-      alert(`${newContact.name} is already in your contacts`);
+      Notify.warning(`${newContact.name} is already in your contacts`);
     } else {
       dispatch(addContact(newContact));
+      Notify.success('Contact is saved');
     }
   };
 

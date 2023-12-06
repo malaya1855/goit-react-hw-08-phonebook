@@ -8,7 +8,6 @@ import {
   NewContactForm,
   Subtitle,
   ContactListForm,
-  Loader,
 } from 'components';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
@@ -19,6 +18,7 @@ import {
   selectIsLoading,
   selectContacts,
 } from 'redux/contacts/selectors';
+import { LoaderProgress } from 'components/LoaderProgress';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ export const Contacts = () => {
         <ContactListForm>
           <Subtitle>My contacts</Subtitle>
 
-          {isLoading && <Loader />}
+          {isLoading && <LoaderProgress />}
           {error && <p>{error.message}</p>}
           {allContacts.length === 0 ? (
             !isLoading && <p>No saved contacts</p>

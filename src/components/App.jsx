@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useAuth } from 'useAuth';
 import { Contacts } from 'components';
+import { LoaderProgress } from './LoaderProgress';
 
 // import { lazy } from 'reac.t';
 // const Home = lazy(() => import('pages/Home'));
@@ -26,7 +27,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <LoaderProgress style={{ marginTop: '100px' }} />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
