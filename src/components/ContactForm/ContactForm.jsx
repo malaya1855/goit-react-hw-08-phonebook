@@ -31,9 +31,9 @@ export const ContactForm = ({ onClose }) => {
     ev.preventDefault();
     const currentElement = ev.currentTarget.elements;
     const name = currentElement.name.value.trim();
-    const number = currentElement.number.value;
+    const phone = currentElement.number.value;
 
-    const newContact = { name, number };
+    const newContact = { name, phone };
 
     ev.target.reset();
     const existedContact = allContacts.find(
