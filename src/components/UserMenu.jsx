@@ -7,7 +7,6 @@ import { useAuth } from 'components/useAuth';
 export const UserMenu = () => {
   const { user } = useAuth() || {};
   const dispatch = useDispatch();
-
   return (
     <Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
       <Typography>Welcome to your contacts, {user.name}</Typography>

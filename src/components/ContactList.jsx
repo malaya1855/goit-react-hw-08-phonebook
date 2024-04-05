@@ -27,7 +27,6 @@ export const ContactList = () => {
   const filteredContacts = allContacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizedFilter)
   );
-
   const handleDeleteContact = contactId => {
     const confirmAction = async () => {
       await dispatch(deleteContact(contactId));
@@ -78,16 +77,16 @@ export const ContactList = () => {
                 <TableCell component="th" scope="row">
                   {nameFirstUpperLetter}
                 </TableCell>
-                <TableCell align="center">{contact.number}</TableCell>
+                <TableCell align="center">{contact.phone}</TableCell>
                 <TableCell align="center">
                   <Button
                     type="button"
-                    id={contact.id}
+                    id={contact._id}
                     sx={{
                       width: '45px',
                       color: 'rgb(72, 76, 122)',
                     }}
-                    onClick={() => handleDeleteContact(contact.id)}
+                    onClick={() => handleDeleteContact(contact._id)}
                   >
                     <SvgIcon
                       component={DeleteIcon}
