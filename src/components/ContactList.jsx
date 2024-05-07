@@ -36,7 +36,7 @@ export const ContactList = () => {
       'Delete contact',
       'Are you sure you want to delete the contact?',
       'Yes',
-      'Cancel',
+      'No',
       confirmAction,
       () => {
         return;
